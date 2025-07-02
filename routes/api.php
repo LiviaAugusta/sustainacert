@@ -10,5 +10,5 @@ use App\Http\Controllers\Api\EsgKpiController;
 | Queste rotte sono caricate dal RouteServiceProvider e hanno già il
 | prefisso /api e il middleware 'api' (stateless, più leggero).
 */
-Route::middleware('throttle:30,1')        // 60 richieste/min IP
+Route::middleware('throttle:60,1')        // 60 richieste/min IP
      ->apiResource('esg-kpis', EsgKpiController::class);
