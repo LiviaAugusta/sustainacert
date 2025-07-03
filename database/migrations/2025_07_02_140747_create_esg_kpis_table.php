@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('company_id')->constrained()->onDelete('cascade');
             $table->string('kpi_nome');
             $table->decimal('valore', 12, 2);
-            $table->string('unità_misura');
+            $table->string('unita_misura');
             $table->enum('categoria', ['climate','energy','waste','water','governance'])
                 ->default('climate');
             $table->string('riferimento_normativo')->nullable();

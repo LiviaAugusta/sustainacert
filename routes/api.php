@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EsgKpiController;
+use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\SciMeasurementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,5 +13,9 @@ use App\Http\Controllers\Api\EsgKpiController;
 | prefisso /api e il middleware 'api' (stateless, più leggero).
 */
 
-Route::middleware('throttle:60,1')   // 60 richieste/min IP
-     ->apiResource('esg-kpis', EsgKpiController::class);
+// Route::middleware(['auth:sanctum'])->group(function () {
+//     Route::apiResource('companies', CompanyController::class);
+//     Route::apiResource('esg-kpis', EsgKpiController::class);
+//     Route::apiResource('sci_measurements', SciMeasurementController::class);
+// });
+Route::apiResource('esg-kpis', EsgKpiController::class)->only('index');
