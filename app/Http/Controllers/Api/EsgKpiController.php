@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\EsgKpi;
+use Illuminate\Support\Facades\Cache;
+
 
 class EsgKpiController extends Controller
 {
@@ -28,7 +30,7 @@ class EsgKpiController extends Controller
                 'company_id'            => 'required|exists:companies,id',
                 'kpi_nome'              => 'required|string',
                 'valore'                => 'required|numeric',
-                'unità_misura'          => 'required|string',
+                'unita_misura'          => 'required|string',
                 'categoria'             => 'required|in:climate,energy,waste,water,governance',
                 'riferimento_normativo' => 'nullable|string',
                 'periodo'               => 'required|string',
@@ -55,7 +57,7 @@ class EsgKpiController extends Controller
         $data = $request->validate([
             'kpi_nome'              => 'sometimes|string',
             'valore'                => 'sometimes|numeric',
-            'unità_misura'          => 'sometimes|string',
+            'unita_misura'          => 'sometimes|string',
             'categoria'             => 'sometimes|in:climate,energy,waste,water,governance',
             'riferimento_normativo' => 'nullable|string',
             'periodo'               => 'sometimes|string',

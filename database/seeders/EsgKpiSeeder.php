@@ -14,7 +14,7 @@ class EsgKpiSeeder extends Seeder
             'company_id'            => 1,
             'kpi_nome'              => 'emissioni_co2',
             'valore'                => 23.5,
-            'unità_misura'          => 't',
+            'unita_misura'          => 't',
             'categoria'             => 'climate',
             'riferimento_normativo' => 'CSRD',
             'periodo'               => 'Q2 2025',
